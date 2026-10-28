@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AdProfitX - Rewards</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f1f5f9;color:#172033}
+header{background:#123c78;color:white;padding:22px 18px}
+header h1{margin:0 0 8px}
+header p{margin:0;color:#dbeafe}
+main{max-width:650px;margin:20px auto;padding:0 14px}
+.card{background:white;border-radius:14px;padding:20px;margin-bottom:16px;box-shadow:0 3px 12px #0000000d}
+.balance{background:#e0f2fe;border:1px solid #bae6fd}
+.amount{font-size:30px;font-weight:bold;color:#075985;margin:12px 0}
+button{background:#1769d2;color:white;border:0;border-radius:9px;padding:12px 16px;font-size:16px;width:100%;margin-top:10px}
+button:disabled{opacity:.6}
+input{width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:8px;margin-top:8px}
+.note{font-size:13px;color:#64748b;line-height:1.6}
+footer{text-align:center;padding:20px;color:#64748b}
+</style>
+</head>
+<body>
+<header>
+<h1>AdProfitX</h1>
+<p>Welcome to your rewards dashboard</p>
+</header>
+<main>
+<div class="card balance">
+<h2>Your Demo Balance</h2>
+<div class="amount" id="balance">0 Points</div>
+<p class="note">یہ صرف نمونہ ہے۔ یہ حقیقی رقم یا کمائی نہیں ہے۔</p>
+</div>
+
+<div class="card">
+<h2>🎯 Daily Rewards</h2>
+<p>اپنے ڈیش بورڈ کا ڈیمو دیکھیں۔</p>
+<button onclick="demoReward()">Try Demo Reward</button>
+<p id="message" class="note">Demo بٹن دبانے سے صرف نمونہ پوائنٹس بڑھیں گے۔</p>
+</div>
+
+<div class="card">
+<h2>👤 Your Account</h2>
+<label for="username">اپنا نام لکھیں</label>
+<input id="username" placeholder="Enter your name">
+<button onclick="welcome()">Continue</button>
+<p id="welcome"></p>
+</div>
+
+<div class="card">
+<h2>🤝 Referral</h2>
+<p>Referral system یہاں بعد میں شامل کیا جا سکتا ہے۔</p>
+<button onclick="alert('Referral feature is coming soon!')">Referral Details</button>
+</div>
+
+<div class="card">
+<h2>💳 Withdraw</h2>
+<p>ادائیگی کی سہولت ابھی فعال نہیں ہے۔</p>
+<button onclick="alert('Withdrawals are not enabled in this demo.')">Withdrawal Details</button>
+</div>
+</main>
+<footer>AdProfitX © 2026 · Demo Website</footer>
+<script>
+let points=0;
+function demoReward(){
+points+=10;
+document.getElementById('balance').textContent=points+' Points';
+document.getElementById('message').textContent=
+'Demo: 10 نمونہ پوائنٹس شامل ہوئے۔ یہ حقیقی کمائی نہیں ہے۔';
+}
+function welcome(){
+let name=document.getElementById('username').value.trim();
+document.getElementById('welcome').textContent=
+name?'Welcome, '+name+'!':'Please enter your name.';
+}
+</script>
+</body>
+</html>
